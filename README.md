@@ -1,4 +1,8 @@
-# local-deplyoment
+# local-deplyoment-llama-cpp
+
+Project to help you get started deploying Generative AI models locally using 
+[LLaMA C++](https://github.com/ggerganov/llama.cpp). LLaMA C++ enables LLM inference with minimal setup and 
+state-of-the-art performance on a wide variety of hardware - locally and in the cloud.
 
 ## Installation
 
@@ -36,5 +40,20 @@ conda activate ./env
 
 Note that the `./env` directory is *not* under version control as it can always be re-created as 
 necessary.
+
+### Installing LLaMA C++ (Mac OS)
+
+After creating and activating the Conda environment you can install LLaMA C++ for Mac OS by running the following shell 
+script.
+
+```bash
+./bin/install-llama-cpp-macos.sh $BUILD
+```
+
+You should replace `$BUILD` with a particular [build number](https://github.com/ggerganov/llama.cpp/releases) for LLaMA 
+C++. The script will download the archiv of pre-compiled binaries for LLaMA C++ and extract them into the 
+`./bin/llama-cpp/$BUILD/` directory. The script then symlinks the binaries into the `bin/` directory of the Conda 
+environment so that they get properly added to the environment.
+
 
 
