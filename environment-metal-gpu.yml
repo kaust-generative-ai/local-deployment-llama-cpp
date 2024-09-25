@@ -1,0 +1,19 @@
+name: null
+
+channels:
+  - conda-forge
+  - nodefaults
+
+dependencies:
+  - ccache
+  - cmake
+  - diskcache
+  - jupyterlab
+  - jupyterlab-lsp
+  - numpy
+  - pip
+  - pip:
+    - -r requirements-metal-gpu.txt
+  - python
+  - python-lsp-server
+  - tqdm
