@@ -5,8 +5,10 @@ channels:
   - nodefaults
 
 dependencies:
+  - diskcache
   - jupyterlab
   - jupyterlab-lsp
+  - numpy
   - pip
   - pip:
     - -r requirements.txt
