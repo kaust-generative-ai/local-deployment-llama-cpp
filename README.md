@@ -21,6 +21,7 @@ script using the following command.
 
 ```bash
 ./bin/install-miniforge.sh
+```
 
 ### Creating the Conda environment
 
