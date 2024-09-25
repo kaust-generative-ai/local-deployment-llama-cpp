@@ -47,11 +47,18 @@ After creating and activating the Conda environment you can install LLaMA C++ fo
 script.
 
 ```bash
-./bin/install-llama-cpp-macos.sh $BUILD
+./bin/install-llama-cpp-macos.sh
 ```
 
-You should replace `$BUILD` with a particular [build number](https://github.com/ggerganov/llama.cpp/releases) for LLaMA 
-C++. The script will download the archiv of pre-compiled binaries for LLaMA C++ and extract them into the 
+This script will install a *recent* build of LLaMA C++. If you wish to install a particular 
+[build number](https://github.com/ggerganov/llama.cpp/releases) for LLaMA C++ then you can pass the build number as a 
+command line argument when running the installation script.
+
+```bash
+./bin/install-llama-cpp-macos.sh $BUILD
+``` 
+
+The script will download the archive of pre-compiled binaries for LLaMA C++ and extract them into the 
 `./bin/llama-cpp/$BUILD/` directory. The script then symlinks the binaries into the `bin/` directory of the Conda 
 environment so that they get properly added to the environment.
 
