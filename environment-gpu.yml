@@ -1,0 +1,23 @@
+name: null
+
+channels:
+  - nvidia
+  - conda-forge
+  - nodefaults
+
+dependencies:
+  - ccache
+  - cmake
+  - cuda-nvcc
+  - cuda-toolkit
+  - cxx-compiler
+  - diskcache
+  - jupyterlab
+  - jupyterlab-lsp
+  - numpy
+  - pip
+  - pip:
+    - -r requirements.txt
+  - python
+  - python-lsp-server
+  - tqdm
