@@ -5,6 +5,9 @@ channels:
   - nodefaults
 
 dependencies:
+  - ccache
+  - cmake
+  - cxx-compiler
   - diskcache
   - jupyterlab
   - jupyterlab-lsp
