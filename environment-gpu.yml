@@ -17,7 +17,7 @@ dependencies:
   - numpy
   - pip
   - pip:
-    - -r requirements.txt
+    - -r requirements-gpu.txt
   - python
   - python-lsp-server
   - tqdm
