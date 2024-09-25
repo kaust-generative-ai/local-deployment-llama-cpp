@@ -5,7 +5,10 @@ channels:
   - nodefaults
 
 dependencies:
+  - jupyterlab
+  - jupyterlab-lsp
   - pip
   - pip:
     - -r requirements.txt
   - python
+  - python-lsp-server
