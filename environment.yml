@@ -5,13 +5,19 @@ channels:
   - nodefaults
 
 dependencies:
+  - ccache
+  - cmake
+  - cxx-compiler
   - diskcache
   - jupyterlab
   - jupyterlab-lsp
   - numpy
+  - openblas
+  - openblas-ilp64
   - pip
   - pip:
     - -r requirements.txt
+  - pkg-config
   - python
   - python-lsp-server
   - tqdm
