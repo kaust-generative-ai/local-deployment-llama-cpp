@@ -23,10 +23,20 @@ script using the following command.
 ./bin/install-miniforge.sh
 ```
 
-### Creating the Conda environment
+### LLaMA C++ with BLAS acceleration (Mac OS, Linux, Windows)
 
-After adding any necessary dependencies that should be downloaded via `conda` to the `environment.yml` file and any 
-dependencies that should be downloaded via `pip` to the `requirements.txt` file you create the Conda environment in a 
+TLDR: run the following command.
+
+```bash
+./bin/create-conda-env.sh && ./bin/build-llama-cpp.sh
+```
+
+Details are covered below.
+
+#### 1. Create the Conda environment
+
+After adding any necessary dependencies that should be installed via `conda/mamba` to the `environment.yml` file and any 
+dependencies that should be installed via `pip` to the `requirements.txt` file you create the Conda environment in a 
 sub-directory `./env`of your project directory by running the following shell script.
 
 ```bash
@@ -41,6 +51,24 @@ conda activate ./env
 
 Note that the `./env` directory is *not* under version control as it can always be re-created as 
 necessary.
+
+#### 2. Build and install LLaMA C++ 
+
+After creating the Conda environment you can build and install LLaMA C++ with BLAS acceleratin by running the following shell 
+script.
+
+```bash
+./bin/build-llama-cpp.sh
+```
+
+This script does the following.
+
+1. Clones [LLaMA C++](https://github.com/ggerganov/llama.cpp into `./src/llama-cpp`.
+2. Activates the Conda environment.
+3. Builds LLaMA C++ with support for CPU acceleration using OpenBlas in `./build/llama-cpp`.
+4. Symlinks the binaries into the `bin/` directory of the Conda environment.
+5. Removes the `./src/llama-cpp` as it is no longer needed.
+6. Deactivates the Conda environment.
 
 ### Installing LLaMA C++ (Mac OS)
 

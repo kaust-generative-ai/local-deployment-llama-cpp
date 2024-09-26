@@ -1,2 +1,2 @@
 gguf
-llama-cpp-python
+llama-cpp-python --config-settings cmake.args="-DGGML_METAL=OFF;-DGGML_LLAMAFILE=OFF;-DGGML_BLAS=ON;-DGGML_BLAS_VENDOR=OpenBLAS"
