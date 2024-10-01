@@ -80,6 +80,14 @@ TLDR: run the following command.
 
 Details are covered below.
 
+#### 0. Install XCode and Command Line Tools
+
+Install [XCode](https://developer.apple.com/xcode/). Then run the following command to install XCode Command Line Tools.
+
+```bash
+xcode-select --install
+```
+
 #### 1. Create the Conda environment
 
 After adding any necessary dependencies that should be installed via `conda/mamba` to the `environment-metal-gpu.yml` file and any 
