@@ -15,13 +15,10 @@ conda activate "$ENV_PREFIX"
 # create the build configuration files
 BUILD_DIR="$PROJECT_DIR"/build/llama-cpp
 if [ -d "$BUILD_DIR" ]; then rm -rf "$BUILD_DIR"; fi
-
 cmake -S "$SRC_DIR" -B "$BUILD_DIR" \
     -DCMAKE_INSTALL_PREFIX="$ENV_PREFIX" `# install binaries into conda environment` \
-    -DGGML_METAL=OFF            `# disable support for metal on mac silicon` \
-    -DGGML_LLAMAFILE=OFF        `# support for Q4_0_4_4 quantization` \
-    -DGGML_BLAS=ON              `# support for CPU accleration using BLAS` \
-    -DGGML_BLAS_VENDOR=OpenBLAS
+    -DGGML_METAL=ON                      `# enable support for Metal GPU accleration` \
+    -DGGML_LLAMAFILE=OFF                 `# support for Q4_0_4_4 quantization`
 
 # build llama.cpp
 cmake --build "$BUILD_DIR" --config Release 
