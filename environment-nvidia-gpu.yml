@@ -6,6 +6,7 @@ channels:
   - nodefaults
 
 dependencies:
+  - blas=*=openblas
   - ccache
   - cmake
   - cuda-nvcc
@@ -14,10 +15,11 @@ dependencies:
   - diskcache
   - jupyterlab
   - jupyterlab-lsp
+  - jupyterlab-nvdashboard
   - numpy
   - pip
   - pip:
-    - -r requirements-gpu.txt
+    - -r requirements-nvidia-gpu.txt
   - python
   - python-lsp-server
   - tqdm

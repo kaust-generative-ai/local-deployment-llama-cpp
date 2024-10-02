@@ -5,6 +5,7 @@ channels:
   - nodefaults
 
 dependencies:
+  - blas=*=openblas
   - ccache
   - cmake
   - cxx-compiler
@@ -12,8 +13,6 @@ dependencies:
   - jupyterlab
   - jupyterlab-lsp
   - numpy
-  - openblas
-  - openblas-ilp64
   - pip
   - pip:
     - -r requirements.txt
