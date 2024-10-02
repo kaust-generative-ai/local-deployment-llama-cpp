@@ -20,10 +20,11 @@ sbatch ./bin/create-conda-environment.sbatch
 ### Creating the Conda environment with NVIDIA GPU acceleration
 
 If you intend to use GPU acceleration for your LLaMA C++ inference, then you should create your Conda environment by 
-launching a job on compute nodes with the same type of GPU that you intend to use for inference.
+launching a job on compute nodes with the same type of GPU that you intend to use for inference. The job script below 
+assumes that you wish to use an A100 GPU node.
  
 ```bash
-sbatch ./bin/create-conda-environment.sbatch
+sbatch ./bin/create-conda-environment-nvidia-gpu.sbatch
 ```
 
 ## Launching a Jupyter server for interactive work
