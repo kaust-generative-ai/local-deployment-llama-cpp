@@ -70,12 +70,24 @@ This command does the following.
 
 #### Support for Metal GPU acceleration (Mac M1+ only)
 
-After creating the Conda environment you can build LLaMA C++ by running the following command.
+After creating the Conda environment you can build LLaMA C++ with support for GPU acceleration 
+using Metal GPU by running the following command.
 
 ```bash
 conda run --prefix ./env --live-stream ./bin/build-llama-cpp-metal-gpu.sh
 ```
 
+#### Support for NVIDIA GPU acceleration (Linux and Windows)
+
+After creating the Conda environment you can build LLaMA C++ by with support for GPU acceleration 
+by running the following command.
+
+```bash
+conda run --prefix ./env --live-stream ./bin/build-llama-cpp-nvidia-gpu.sh
+```
+
+For a detailed discussion of additional NVIDIA GPU compilation options that might improve performance 
+on particular GPU architectures see the [LLaMA C++ build documentation](https://github.com/ggerganov/llama.cpp/blob/master/docs/build.md#cuda).
 ### Activating the Conda environment
 
 Once the new environment has been created you can activate the environment with the following command.
