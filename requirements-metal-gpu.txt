@@ -1,0 +1,2 @@
+gguf
+llama-cpp-python --config-settings cmake.args="-DGGML_METAL=ON;-DGGML_LLAMAFILE=OFF"

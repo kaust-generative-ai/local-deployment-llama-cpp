@@ -7,16 +7,13 @@ channels:
 dependencies:
   - ccache
   - cmake
-  - cxx-compiler
   - diskcache
   - jupyterlab
   - jupyterlab-lsp
   - numpy
-  - openblas
-  - openblas-ilp64
   - pip
   - pip:
-    - -r requirements.txt
+    - -r requirements-metal-gpu.txt
   - pkg-config
   - python
   - python-lsp-server

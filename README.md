@@ -23,10 +23,20 @@ script using the following command.
 ./bin/install-miniforge.sh
 ```
 
-### Creating the Conda environment
+### LLaMA C++ with BLAS acceleration (Mac OS, Linux, Windows)
 
-After adding any necessary dependencies that should be downloaded via `conda` to the `environment.yml` file and any 
-dependencies that should be downloaded via `pip` to the `requirements.txt` file you create the Conda environment in a 
+TLDR: run the following command.
+
+```bash
+./bin/create-conda-env.sh && ./bin/build-llama-cpp.sh
+```
+
+Details are covered below.
+
+#### 1. Create the Conda environment
+
+After adding any necessary dependencies that should be installed via `conda/mamba` to the `environment.yml` file and any 
+dependencies that should be installed via `pip` to the `requirements.txt` file you create the Conda environment in a 
 sub-directory `./env`of your project directory by running the following shell script.
 
 ```bash
@@ -42,26 +52,77 @@ conda activate ./env
 Note that the `./env` directory is *not* under version control as it can always be re-created as 
 necessary.
 
-### Installing LLaMA C++ (Mac OS)
+#### 2. Build and install LLaMA C++ 
 
-After creating and activating the Conda environment you can install LLaMA C++ for Mac OS by running the following shell 
+After creating the Conda environment you can build and install LLaMA C++ with BLAS acceleration by running the following shell 
 script.
 
 ```bash
-./bin/install-llama-cpp-macos.sh
+./bin/build-llama-cpp.sh
 ```
 
-This script will install a *recent* build of LLaMA C++. If you wish to install a particular 
-[build number](https://github.com/ggerganov/llama.cpp/releases) for LLaMA C++ then you can pass the build number as a 
-command line argument when running the installation script.
+This script does the following.
+
+1. Clones [LLaMA C++](https://github.com/ggerganov/llama.cpp into `./src/llama-cpp`.
+2. Activates the Conda environment.
+3. Builds LLaMA C++ with support for CPU acceleration using OpenBlas in `./build/llama-cpp`.
+4. Symlinks the binaries into the `bin/` directory of the Conda environment.
+5. Removes the `./src/llama-cpp` as it is no longer needed.
+6. Deactivates the Conda environment.
+
+### LLaMA C++ with Metal GPU acceleration (Mac OS)
+
+TLDR: run the following command.
 
 ```bash
-./bin/install-llama-cpp-macos.sh $BUILD
-``` 
+./bin/create-conda-env.sh environment-metal-gpu.yml && ./bin/build-llama-cpp-metal-gpu.sh
+```
 
-The script will download the archive of pre-compiled binaries for LLaMA C++ and extract them into the 
-`./bin/llama-cpp/$BUILD/` directory. The script then symlinks the binaries into the `bin/` directory of the Conda 
-environment so that they get properly added to the environment.
+Details are covered below.
 
+#### 0. Install XCode and Command Line Tools
+
+Install [XCode](https://developer.apple.com/xcode/). Then run the following command to install XCode Command Line Tools.
+
+```bash
+xcode-select --install
+```
+
+#### 1. Create the Conda environment
+
+After adding any necessary dependencies that should be installed via `conda/mamba` to the `environment-metal-gpu.yml` file and any 
+dependencies that should be installed via `pip` to the `requirements-metal-gpu.txt` file you create the Conda environment in a 
+sub-directory `./env`of your project directory by running the following shell script.
+
+```bash
+./bin/create-conda-env.sh environment-metal-gpu.yml
+```
+
+Once the new environment has been created you can activate the environment with the following command.
+
+```bash
+conda activate ./env
+```
+
+Note that the `./env` directory is *not* under version control as it can always be re-created as 
+necessary.
+
+#### 2. Build and install LLaMA C++ 
+
+After creating the Conda environment you can build and install LLaMA C++ with Metal GPU acceleration by running the 
+following shell script.
+
+```bash
+./bin/build-llama-cpp-metal-gpu.sh
+```
+
+This script does the following.
+
+1. Clones [LLaMA C++](https://github.com/ggerganov/llama.cpp into `./src/llama-cpp`.
+2. Activates the Conda environment.
+3. Builds LLaMA C++ with support for Metal GPU acceleration in `./build/llama-cpp`.
+4. Installs the binaries into the `bin/` directory of the Conda environment.
+5. Removes the `./src/llama-cpp` as it is no longer needed.
+6. Deactivates the Conda environment.
 
 
