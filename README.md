@@ -86,6 +86,8 @@ by running the following command.
 conda run --prefix ./env --live-stream ./bin/build-llama-cpp-nvidia-gpu.sh
 ```
 
+For a detailed discussion of additional NVIDIA GPU compilation options that might improve performance 
+on particular GPU architectures see the [LLaMA C++ build documentation](https://github.com/ggerganov/llama.cpp/blob/master/docs/build.md#cuda).
 ### Activating the Conda environment
 
 Once the new environment has been created you can activate the environment with the following command.
