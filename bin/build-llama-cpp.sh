@@ -13,11 +13,11 @@ BUILD_DIR="$PROJECT_DIR"/build/llama-cpp
 if [ -d "$BUILD_DIR" ]; then rm -rf "$BUILD_DIR"; fi
 
 cmake -S "$SRC_DIR" -B "$BUILD_DIR" \
-    -DCMAKE_INSTALL_PREFIX="$PWD/env" `# install binaries into conda environment` \
-    -DGGML_ACCELERATE=OFF             `# disable support for accelerat on mac silicon` \
-    -DGGML_METAL=OFF                  `# disable support for metal on mac silicon` \
-    -DGGML_LLAMAFILE=OFF              `# support for Q4_0_4_4 quantization` \
-    -DGGML_BLAS=ON                    `# support for CPU accleration using BLAS` \
+    -DCMAKE_INSTALL_PREFIX="$PWD"/env    `# install binaries into conda environment` \
+    -DCMAKE_INSTALL_RPATH="$PWD"/env/lib `# insure that dyanmic libs can be found at runtime` \
+    -DGGML_METAL=OFF                     `# disable support for metal on mac silicon` \
+    -DGGML_LLAMAFILE=OFF                 `# support for Q4_0_4_4 quantization` \
+    -DGGML_BLAS=ON                       `# support for CPU accleration using BLAS` \
     -DGGML_BLAS_VENDOR=OpenBLAS
 
 # build llama.cpp
