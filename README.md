@@ -43,6 +43,16 @@ your project directory by running the following shell script.
 ./bin/create-conda-env.sh environment-metal-gpu.yml
 ```
 
+#### Support for NVIDIA GPU acceleration (Linux and Windows)
+
+In order to support Metal GPU acceleration you need to install a few extra dependecies. These dependencies are added to the 
+`environment-nvidia-gpu.yml` and `requirements-nvidia-gpu.txt` files. Create the Conda environment in a sub-directory `./env`of 
+your project directory by running the following shell script.
+
+```bash
+./bin/create-conda-env.sh environment-nvidia-gpu.yml
+```
+
 ### Install LLaMA C++ 
 
 For convenience there is an installer scripts which can be used to download pre-compiled LLaMA C++ binaries for various 
@@ -119,6 +129,18 @@ After creating the Conda environment you can build LLaMA C++ by running the foll
 ```bash
 conda run --prefix ./env --live-stream ./bin/build-llama-cpp-metal-gpu.sh
 ```
+
+#### Support for NVIDIA GPU acceleration (Linux and Windows)
+
+After creating the Conda environment you can build LLaMA C++ by with support for GPU acceleration 
+by running the following command.
+
+```bash
+conda run --prefix ./env --live-stream ./bin/build-llama-cpp-nvidia-gpu.sh
+```
+
+For a detailed discussion of additional NVIDIA GPU compilation options that might improve performance 
+on particular GPU architectures see the [LLaMA C++ build documentation](https://github.com/ggerganov/llama.cpp/blob/master/docs/build.md#cuda).
 
 ### Activating the Conda environment
 
