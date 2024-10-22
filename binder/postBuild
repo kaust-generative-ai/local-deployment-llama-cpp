@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# entire script fails if a single command fails
+set -e
+
+# build llama-cpp inside the conda environment
+conda run --name notebook --live-stream ./bin/build-llama-cpp.sh
