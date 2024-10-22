@@ -10,6 +10,7 @@ dependencies:
   - cmake
   - diskcache
   - git-lfs
+  - huggingface_hub
   - jupyterlab
   - jupyterlab-lsp
   - numpy
@@ -19,6 +20,7 @@ dependencies:
   - pkg-config
   - protobuf
   - python<=3.12
+  - python-dotenv
   - python-lsp-server
   - pytorch
   - sentencepiece

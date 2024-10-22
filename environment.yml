@@ -1,6 +1,7 @@
 name: null
 
 channels:
+  - pytorch
   - conda-forge
   - nodefaults
 
@@ -10,6 +11,8 @@ dependencies:
   - cmake
   - cxx-compiler
   - diskcache
+  - git-lfs
+  - huggingface_hub
   - jupyterlab
   - jupyterlab-lsp
   - numpy
@@ -17,6 +20,12 @@ dependencies:
   - pip:
     - -r requirements.txt
   - pkg-config
-  - python
+  - protobuf
+  - python<=3.12
+  - python-dotenv
   - python-lsp-server
+  - pytorch
+  - sentencepiece
   - tqdm
+  - transformers
+  

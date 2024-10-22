@@ -1,6 +1,7 @@
 name: null
 
 channels:
+  - pytorch
   - nvidia
   - conda-forge
   - nodefaults
@@ -13,6 +14,8 @@ dependencies:
   - cuda-toolkit
   - cxx-compiler
   - diskcache
+  - git-lfs
+  - huggingface_hub
   - jupyterlab
   - jupyterlab-lsp
   - jupyterlab-nvdashboard
@@ -20,6 +23,12 @@ dependencies:
   - pip
   - pip:
     - -r requirements-nvidia-gpu.txt
+  - protobuf
   - python
+  - python-dotenv
   - python-lsp-server
+  - pytorch-cuda=12.4
   - tqdm
+  - sentencepiece
+  - transformers
+
