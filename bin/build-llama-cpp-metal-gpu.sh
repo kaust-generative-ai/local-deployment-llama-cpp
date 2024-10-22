@@ -15,11 +15,11 @@ if [ -d "$BUILD_DIR" ]; then rm -rf "$BUILD_DIR"; fi
 cmake -S "$SRC_DIR" -B "$BUILD_DIR" \
     -DCMAKE_INSTALL_PREFIX="$PWD"/env    `# install binaries into conda environment` \
     -DCMAKE_INSTALL_RPATH="$PWD"/env/lib `# insure that dyanmic libs can be found at runtime` \
+    -DLLAMA_CURL=ON                      `# enable curl support`
     -DGGML_ACCELERATE=ON                 `# enable support for CPU acceleration` \
     -DGGML_METAL=ON                      `# enable support for Metal GPU accleration` \
     -DGGML_LLAMAFILE=OFF                 `# support for Q4_0_4_4 quantization` \
-    -DGGML_AMX=OFF                       `# disable AMX support (only relevant for Intel CPUs)` \
-    -DLLAMA_CURL=ON                      `# enable curl support`
+    -DGGML_AMX=OFF                       `# disable AMX support (only relevant for Intel CPUs)`
 
 # build llama.cpp
 cmake --build "$BUILD_DIR" --config Release 
