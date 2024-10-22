@@ -6,7 +6,7 @@ set -e
 # clone the llama.cpp repository
 PROJECT_DIR="$PWD"
 SRC_DIR="$PROJECT_DIR"/src/llama-cpp
-if [ ! -d "$SRC_DIR" ]; then git clone git@github.com:ggerganov/llama.cpp.git "$SRC_DIR"; fi
+if [ ! -d "$SRC_DIR" ]; then git https://github.com/ggerganov/llama.cpp.git "$SRC_DIR"; fi
 
 # create the build configuration files
 BUILD_DIR="$PROJECT_DIR"/build/llama-cpp
