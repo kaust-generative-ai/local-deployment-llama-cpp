@@ -1,0 +1,25 @@
+name: null
+
+channels:
+  - nvidia
+  - conda-forge
+  - nodefaults
+
+dependencies:
+  - blas=*=openblas
+  - ccache
+  - cmake
+  - cuda-nvcc
+  - cuda-toolkit
+  - cxx-compiler
+  - diskcache
+  - jupyterlab
+  - jupyterlab-lsp
+  - jupyterlab-nvdashboard
+  - numpy
+  - pip
+  - pip:
+    - -r requirements-nvidia-gpu.txt
+  - python
+  - python-lsp-server
+  - tqdm
