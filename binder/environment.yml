@@ -16,6 +16,7 @@ dependencies:
   - jupyterlab
   - jupyterlab-lsp
   - jupyterlab-nvdashboard
+  - nbgitpuller
   - numpy
   - pip
   - pip:
