@@ -11,7 +11,7 @@ if [ ! -d "$SRC_DIR"/llama-cpp ]; then git clone https://github.com/ggerganov/ll
 # clone the huggingface repository
 HF_REPO="$1"
 MODEL_DIR="$PROJECT_DIR"/models
-if [ ! -d "$MODEL_DIR"/"$HF_REPO" ]; then git clone https://huggingface.co/"$HF_REPO" "$MODEL_DIR"/"$HF_REPO"; fi
+if [ ! -d "$MODEL_DIR"/"$HF_REPO" ]; then git-lfs clone https://huggingface.co/"$HF_REPO" "$MODEL_DIR"/"$HF_REPO"; fi
 
 # convert to GGUF format
 OUTTYPE="${2-bf16}"
