@@ -1,2 +1,2 @@
 gguf
-llama-cpp-python --config-settings cmake.args="-DGGML_ACCELERATE=ON;-DGGML_METAL=ON;-DGGML_LLAMAFILE=OFF"
+llama-cpp-python --config-settings cmake.args="-DLLAMA_CURL=ON;-DGGML_ACCELERATE=ON;-DGGML_METAL=ON;-DGGML_LLAMAFILE=OFF"
