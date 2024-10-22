@@ -1,6 +1,7 @@
 name: null
 
 channels:
+  - pytorch
   - conda-forge
   - nodefaults
 
@@ -8,6 +9,7 @@ dependencies:
   - ccache
   - cmake
   - diskcache
+  - git-lfs
   - jupyterlab
   - jupyterlab-lsp
   - numpy
@@ -15,6 +17,10 @@ dependencies:
   - pip:
     - -r requirements-metal-gpu.txt
   - pkg-config
-  - python
+  - protobuf
+  - python<=3.12
   - python-lsp-server
+  - pytorch
+  - sentencepiece
   - tqdm
+  - transformers
