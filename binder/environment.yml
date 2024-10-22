@@ -12,6 +12,7 @@ dependencies:
   - diskcache
   - jupyterlab
   - jupyterlab-lsp
+  - nbgitpuller
   - numpy
   - pip
   - pip:
