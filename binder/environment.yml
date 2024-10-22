@@ -1,0 +1,22 @@
+name: null
+
+channels:
+  - conda-forge
+  - nodefaults
+
+dependencies:
+  - blas=*=openblas
+  - ccache
+  - cmake
+  - cxx-compiler
+  - diskcache
+  - jupyterlab
+  - jupyterlab-lsp
+  - numpy
+  - pip
+  - pip:
+    - -r requirements.txt
+  - pkg-config
+  - python
+  - python-lsp-server
+  - tqdm
