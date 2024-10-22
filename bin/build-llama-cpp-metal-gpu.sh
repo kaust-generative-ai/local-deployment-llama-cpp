@@ -18,7 +18,8 @@ cmake -S "$SRC_DIR" -B "$BUILD_DIR" \
     -DGGML_ACCELERATE=ON                 `# enable support for CPU acceleration` \
     -DGGML_METAL=ON                      `# enable support for Metal GPU accleration` \
     -DGGML_LLAMAFILE=OFF                 `# support for Q4_0_4_4 quantization` \
-    -DGGML_AMX=OFF                       `# disable AMX support (only relevant for Intel CPUs)`
+    -DGGML_AMX=OFF                       `# disable AMX support (only relevant for Intel CPUs)` \
+    -DLLAMA_CURL=ON                      `# enable curl support`
 
 # build llama.cpp
 cmake --build "$BUILD_DIR" --config Release 
