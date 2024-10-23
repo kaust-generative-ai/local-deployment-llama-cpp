@@ -24,4 +24,5 @@ python "$SRC_DIR"/llama-cpp/convert_hf_to_gguf.py "$MODEL_DIR"/"$HF_REPO" --outt
 # quantize the GGUF model
 QUANTTYPE="${3-Q4_K_M}"
 QUANTIZED_MODEL_FILE="$(basename "$MODEL_DIR"/"$HF_REPO")-"$QUANTTYPE".gguf"
-llama-quantize "$OUTFILE" "$QUANTIZED_MODEL_FILE" "$QUANTTYPE"
+QUANTIZED_OUTFILE="$MODEL_DIR"/"$QUANTIZED_MODEL_FILE"
+llama-quantize "$OUTFILE" "$QUANTIZED_OUTFILE" "$QUANTTYPE"
